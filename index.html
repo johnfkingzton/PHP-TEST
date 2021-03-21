@@ -10,7 +10,7 @@
 <body>
 <a>HELLO</a>
 <script>
-    const params = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams("https://example.com/?product=troussers&color=black&newuser&size=s");
     const size = urlParams.get('size');
     alert(size);
     // s
