@@ -10,10 +10,16 @@
 <body>
 <a>HELLO</a>
 <script>
-    var number = getUrlVars()["x"];
-    var mytext = getUrlVars()["text"];
-    alert(number);
-    document.write (number);
-</script>
+    const params = new URLSearchParams(window.location.search);
+    const size = urlParams.get('size');
+    alert(size);
+    // s
+    const color = urlParams.get('color')
+    alert(color);
+    // black      
+    const newUser = urlParams.get('newuser')
+    alert(newUser);
+    // empty string
+  </script>
 </body>
 </html>
