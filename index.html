@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
 </head>
 <body>
     <p id="demo"></p>
@@ -27,8 +28,8 @@
         };
         var tech = getUrlParameter('technology');
         var blog = getUrlParameter('blog');
-
-        document.getElementById("demo").innerHTML = tech + blog;
+        var md5hash = md5(tech + blog);
+        document.getElementById("demo").innerHTML = md5hash;
     </script>
 </body>
 </html>
