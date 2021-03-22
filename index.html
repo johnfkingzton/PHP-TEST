@@ -6,10 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
 </head>
 <body>
     <p id="demo"></p>
+
+    <br />
+    <br />
+
+
+    <strong><label>Original String:</label></strong>
+    <span id="demo0"></span>
+  
+    <br>
+    <br>
+    
+    <strong><label>Encrypted:</label></strong>
+    <span id="demo1"></span>
+  
+    <br>
+    <br>
+    
+    <strong><label>Decrypted:</label></strong>
+    <span id="demo2"></span>
+  
+    <br> 
+    <br>
+  
+    <strong><label>String after Decryption:</label></strong>
+    <span id="demo3"></span>
+  
+    
+    <br />
+    <br />
+
+    <script>
+var myString   = "blablabla Card game bla";
+var myPassword = "myPassword";
+
+// PROCESS
+var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
+var decrypted = CryptoJS.AES.decrypt(encrypted, myPassword);
+document.getElementById("demo0").innerHTML = myString;
+document.getElementById("demo1").innerHTML = encrypted;
+document.getElementById("demo2").innerHTML = decrypted;
+document.getElementById("demo3").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+    </script>
+
     <script>
         var getUrlParameter = function getUrlParameter(sParam) {
             var sPageURL = window.location.search.substring(1),
