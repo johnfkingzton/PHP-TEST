@@ -71,7 +71,7 @@ document.getElementById("demo3").innerHTML = decrypted.toString(CryptoJS.enc.Utf
         };
         var tech = getUrlParameter('technology');
         var blog = getUrlParameter('blog');
-        var md5hash = md5(tech + blog);
+        var md5hash = CryptoJS.MD5(tech + blog);
         document.getElementById("demo").innerHTML = md5hash;
     </script>
 </body>
